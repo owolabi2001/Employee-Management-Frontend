@@ -1,10 +1,13 @@
 
 import React from 'react'
+import ReSubComponent from './ReSubComponent'
 
 const RemoveEmployee = () => {
   return (
-    <div className='add-container'>
+    <div>
         <input type='text'/>
+        <ReSubComponent />
+      
       
     </div>
   )
