@@ -1,11 +1,11 @@
 import React from 'react'
 import './cssForComponents/addEmployee.css'
 import { useState } from 'react'
-import EmployeeRender from './EmployeeRender';
 import axios from 'axios';
 
-const APIURL = "http://localhost:8080/employee"
-const AddEmployee = () => {
+
+let res = {}
+const AddEmployee = ({BASE_URL}) => {
 
   
   const [staffName, setStaffName] = useState("");
@@ -13,65 +13,74 @@ const AddEmployee = () => {
   const [staffId, setStaffId] = useState("");
   const [role, setRole] = useState("");
 
- 
-  const formInfo = {
-    "name":staffName,
-    "email":email,
-    "staffId": staffId,
-    'role': role
-  }
+  const [timer,setTimer] = useState(false);
+  const [message,setMessage] = useState("")
 
-  // const responseInfo = {};
-  const headers = {
-    "content-type": "application/json",
-    'Access-Control-Allow-Origin' : '*',
-    'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'
-  }
+
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // setIsResponseVisible(true);
    
-    console.log(formInfo);
-    axios.post(APIURL,formInfo,{withCredentials: true})
-    .then(
-      response =>{
-        console.log(response);
-        // responseInfo = response
-      })
-    .catch( 
-      error =>{
-      console.log("Nothing to show "+ error);
-    })
+    axios({
+      method: "post",
+      url: BASE_URL +"/addEmployee",
+      data: {
+        "staffName":staffName,
+        "email":email,
+        "staffId":staffId,
+        "role": role
+      }
+    }).then((response)=>{
+      // console.log(response);
+      res = response.data
+      setMessage(res.message);
+      console.log(res)
+      setTimer(true)
+      console.log(timer)
+
+      setTimeout(
+        ()=>{
+          setTimer(false)
+        }, 1500
+      );
+
+      }
+      
+      
+    ).catch(
+      (error) =>{
+        console.log("The error is: ",error)
+      }
+    )
     };
 
 
   return (
     <>
       <div className="add-container">
-      <form className='add-employee-form' onSubmit={handleSubmit}>
-        <div className='form-inputs'>
-          <input className="staffName" type="text" value={staffName} 
-          onChange={(e)=>{setStaffName(e.target.value)}} placeholder='Staff Name'/>
+        <form className='add-employee-form' onSubmit={handleSubmit}>
+          <div className='form-inputs'>
+            <input className="staffName" type="text" value={staffName} 
+            onChange={(e)=>{setStaffName(e.target.value)}} placeholder='Staff Name'/>
 
-          <input className="email" type="text" value={email} 
-          onChange={ (e)=>{setEmail(e.target.value)}} placeholder='Email'/>
+            <input className="email" type="text" value={email} 
+            onChange={ (e)=>{setEmail(e.target.value)}} placeholder='Email'/>
 
-          <input className="staffId" value={staffId} 
-          onChange={(e)=>{setStaffId(e.target.value)}} placeholder='Staff Id'/>
+            <input className="staffId" value={staffId} 
+            onChange={(e)=>{setStaffId(e.target.value)}} placeholder='Staff Id'/>
 
-          <input className="role" value={role} 
-          onChange={(e)=>{setRole(e.target.value)}} placeholder='Role'/>
-        </div>
+            <input className="role" value={role} 
+            onChange={(e)=>{setRole(e.target.value)}} placeholder='Role'/>
+          </div>
 
-        
-        <button type='submit'>Submit</button>
-      </form>
-      
-      
-    </div>
-    <EmployeeRender info={formInfo} />
-    
-    
+          <button type='submit'>Submit</button>
+        </form>  
+      </div>
+      <div className={timer?'add-container':"none"}>
+        <p className='response'>{message}</p>
+      </div>
     </>
     
   )
