@@ -5,13 +5,14 @@ import AddEmployee from './components/AddEmployee';
 import RemoveEmployee from './components/RemoveEmployee';
 
 const App = () => {
+  const  BASE_URL= "http://localhost:8080/employee"
   return (
     <div className="App">
       <Navbar />
       <Sidebar />
       <Routes>
-        <Route path='/addEmployee' element={<AddEmployee />}></Route>
-        <Route path='/removeEmployee' element={<RemoveEmployee/>}></Route>
+        <Route path='/addEmployee' element={<AddEmployee BASE_URL={BASE_URL}/>}></Route>
+        <Route path='/removeEmployee' element={<RemoveEmployee BASE_URL={BASE_URL}/>}></Route>
       </Routes>
     </div>
   );
