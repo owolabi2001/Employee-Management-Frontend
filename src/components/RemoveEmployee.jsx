@@ -22,9 +22,9 @@ const RemoveEmployee = ({BASE_URL}) => {
         variables.map((variable)=>{
           list.push(variable)
         })
-        if(employeeList){
-          setEmployeeList([...employeeList,response.data.data])
-        }
+        setEmployeeList([...employeeList, ...response.data.data]);
+
+        // }
         console.log("employee list from the get10 function",employeeList)
       }
     ).catch(
@@ -44,24 +44,31 @@ const RemoveEmployee = ({BASE_URL}) => {
 
   
   return (
-    <div className="add-container">
+    <>
+      <div className="add-container">
         <input type='text' className="search" placeholder="Search Name of Employee's here"
           value={search} onChange={(e) =>{
             setSearch(e.target.value)    
           }}
         />
         <p>{search}</p> 
+
+      </div>
+      <div>
         {
-          employeeList?.length>0?(
-            employeeList.map((employee)=>{
-              <ReSubComponent item={employee.name} />
-            })
-          ) :(
+          employeeList?.length > 0 ? (
+            employeeList.map((employee) => (
+              <ReSubComponent key={employee.id} item={employee} />
+            ))
+          ) : (
             <p>No Employee In the Database</p>
           )
-          
-        }  
-    </div>
+        }
+
+      </div>
+    </>
+    
+    
   )
 }
 
