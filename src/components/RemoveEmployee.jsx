@@ -4,7 +4,7 @@ import ReSubComponent from './ReSubComponent'
 import './cssForComponents/removeEmployee.css'
 import { useState,useEffect } from 'react'
 import axios from 'axios'
-import {IoAddCircle} from "react-icons"
+
 const RemoveEmployee = ({BASE_URL}) => {
   const [search, setSearch] = useState("");
   const [employeeList, setEmployeeList] = useState([]);
@@ -35,6 +35,15 @@ const RemoveEmployee = ({BASE_URL}) => {
     )
     
   }
+
+  const getEmployeByName = () =>{
+    axios(
+      {
+        method: "get",
+        url: BASE_URL  + "/" + search
+      }
+    ).then().catch()
+  }
   useEffect(()=>{
     get10Employee();
     console.log("list",list);
@@ -54,12 +63,12 @@ const RemoveEmployee = ({BASE_URL}) => {
         <p>{search}</p> 
 
       </div>
-      <div>
+      <div className='add-container'>
         {
           employeeList?.length > 0 ? (
             employeeList.map((employee) => (
               <ReSubComponent key={employee.id} item={employee} />
-            ))
+            )) 
           ) : (
             <p>No Employee In the Database</p>
           )
