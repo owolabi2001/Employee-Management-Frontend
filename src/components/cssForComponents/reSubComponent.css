@@ -1,4 +1,50 @@
 .sub-container{
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin: 15px 50px 15px 50px;
+    row-gap: 10px;
+    column-gap: 15px;
+    transition: 0.2s;
+    /* font-size: 500px; */
+}
+
+.sub-container p{
+    padding: 10px;
+    border-radius: 7px;
+    /* box-shadow: 2px 2px 2px var(--primary-color-light); */
+    transition:  .2s;
+
+
+}
+.sub-container:hover{
+    padding: 14px;
+    border-radius: 7px;
+    box-shadow: 2px 2px 2px var(--primary-color-light);
+
+
+}
+.sub-container button{
+    letter-spacing: 1.5px ;
+    border-radius: 7px;
+    cursor: pointer;
+    transform: 0.2s;
+    background-color: var(--background-color);
+    border-color: var(--primary-color);
+    border-style: solid ;
+    border: none;
+    border-bottom: 2px solid var(--primary-color);
+    transition: .2s;
+    
+}
+
+.sub-container button:hover{
+    background-color: var(--primary-color);
+    border-radius: 10px ;
+    color: white;
+}
+
+.sub-container button:active{
+    background-color: var(--primary-color-light);
+    border-radius: 10px ;
+    color: white;
 }

@@ -1,8 +1,14 @@
 .add-container .search{
+    width: 500px;
     background-color: var(--background-color);
     border-radius: 3px;
     border: none;
     border-bottom: 1px solid var(--primary-color) ;
-    padding: 10px;
-    margin: 30px auto 30px 380px
+    padding: 15px;
+    margin: 30px 25% 30px 25%
+}
+
+.add-container .search::placeholder{
+    text-align: center;
+    color: var(--primary-color-light);
 }
