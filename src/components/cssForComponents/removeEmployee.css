@@ -1,12 +1,68 @@
-.add-container .search{
-    width: 500px;
-    background-color: var(--background-color);
-    border-radius: 3px;
-    border: none;
-    border-bottom: 1px solid var(--primary-color) ;
-    padding: 15px;
-    margin: 30px 25% 30px 25%
+.add-container .flex-container{
+    display: flex;
+    justify-content: center;
+    margin-left: 40px;
+    margin-right: 40px;
+    
+    
 }
+.add-container .flex-container .search{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    max-width: 500px;
+    background-color: var(--background-color);
+    border-radius: 9px;
+    /* border: none; */
+    border: 2px solid var(--primary-color) ;
+    padding: 15px;
+    flex: 2;
+    margin-right: 10px;
+}
+
+
+
+.add-container .flex-container .search-button{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    /* padding: 15px; */
+    padding: 0;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 4px 4px 5px var(--primary-color-light);
+    flex: 0.05;
+    background-color: var(--background-color);
+    transition: .2s;
+    
+}
+
+.add-container .flex-container .search-button:hover{
+    background-color: var(--primary-color);
+    
+
+}
+.add-container .flex-container .search-button:active{
+    background-color: var(--primary-color-light);
+
+}
+
+
+.tfi-search{
+    color: var(--primary-color);
+    width: 80px;
+    height: 35px;
+    margin: 0px;
+
+    transition: .2s;
+    
+}
+
+.tfi-search:hover{
+    color: white;
+}
+
+
+
+
 
 .add-container .search::placeholder{
     text-align: center;
