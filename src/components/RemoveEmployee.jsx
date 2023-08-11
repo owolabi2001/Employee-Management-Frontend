@@ -3,6 +3,7 @@ import React from 'react'
 import ReSubComponent from './ReSubComponent'
 import './cssForComponents/removeEmployee.css'
 import { useState,useEffect } from 'react'
+import {TfiSearch} from 'react-icons/tfi'
 import axios from 'axios'
 
 const RemoveEmployee = ({BASE_URL}) => {
@@ -35,14 +36,30 @@ const RemoveEmployee = ({BASE_URL}) => {
     )
     
   }
+  
+  const handleClick = () =>{
+    
+  }
 
-  const getEmployeByName = () =>{
+
+  const getEmployeByName = (e) =>{
+    e.preventDefault()
+    console.log(BASE_URL + "/" + search)
     axios(
       {
         method: "get",
-        url: BASE_URL  + "/" + search
+        url: BASE_URL  + "/getEployee/" + search
       }
-    ).then().catch()
+    ).then(
+      (response) =>{
+        console.log(response.data)
+        setEmployeeList(response.data.data);
+      }
+    ).catch(
+      (error) =>{
+        console.log("An error just Occured")
+      }
+    )
   }
   useEffect(()=>{
     get10Employee();
@@ -55,19 +72,24 @@ const RemoveEmployee = ({BASE_URL}) => {
   return (
     <>
       <div className="add-container">
-        <input type='text' className="search" placeholder="Search Name of Employee's here"
-          value={search} onChange={(e) =>{
-            setSearch(e.target.value)    
-          }}
-        />
-        <p>{search}</p> 
+        <div className='flex-container'>
+          <input type='text' className="search" placeholder="Search Name of Employee's here"
+            value={search} onChange={(e) =>{
+              setSearch(e.target.value)    
+              // getEmployeByName()
+            }}
+          />
+          <button className='search-button'>
+            <TfiSearch className='tfi-search' onClick={getEmployeByName}/>
+          </button>
 
+        </div>
       </div>
       <div className='add-container'>
         {
           employeeList?.length > 0 ? (
             employeeList.map((employee) => (
-              <ReSubComponent key={employee.id} item={employee} />
+              <ReSubComponent key={employee.id} item={employee} BASE_URL={BASE_URL} />
             )) 
           ) : (
             <p>No Employee In the Database</p>
