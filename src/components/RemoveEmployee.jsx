@@ -43,7 +43,7 @@ const RemoveEmployee = ({BASE_URL}) => {
 
 
   const getEmployeByName = (e) =>{
-    e.preventDefault()
+    // e.preventDefault()
     console.log(BASE_URL + "/" + search)
     axios(
       {
@@ -76,7 +76,7 @@ const RemoveEmployee = ({BASE_URL}) => {
           <input type='text' className="search" placeholder="Search Name of Employee's here"
             value={search} onChange={(e) =>{
               setSearch(e.target.value)    
-              // getEmployeByName()
+              getEmployeByName()
             }}
           />
           <button className='search-button'>

@@ -11,6 +11,8 @@
 
 }
 
+
+
 .add-container form input{
     background-color: var(--background-color);
     height: 60px;
@@ -51,6 +53,40 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
     padding: 20px;
     color: var(--primary-color)
+}
+
+.link-div{
+    display: flex;
+    justify-content: center;
+    
+    
+
+
+}
+
+.link-container{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+    border-radius: 20px;
+    padding: 10px;  
+    color: var(--primary-color);
+    background-color: var(--background-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    width: 250px;
+    transition: .3s;
+
+
+    /* position: relative;
+    left: 23%;
+    top: 90px;
+    width: 74%;
+    background-color: var(--background-color);
+    
+    margin-bottom: 20px;
+    /* box-shadow: 4px 4px 5px var(--primary-color-light); */ 
+    
 }
 
 .none{
