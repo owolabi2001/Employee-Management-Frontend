@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useEffect } from 'react'
 
 const ReSubComponent = ({item, BASE_URL}) => {
+
   const deleteEmployee = ()=>{
     axios.delete(BASE_URL + "/deleteEmployee",{
       params: {
@@ -18,7 +19,9 @@ const ReSubComponent = ({item, BASE_URL}) => {
     )
   }
 
-  // useEffect{}
+  
+    
+
 
   return (
     <div className='parent'>
@@ -26,6 +29,8 @@ const ReSubComponent = ({item, BASE_URL}) => {
         <p>{item.staffName}</p>
         <button onClick={(e)=>{
           deleteEmployee()
+          console.log("item Id: ",item.id)
+          
         }}>delete</button>
       </div>
 

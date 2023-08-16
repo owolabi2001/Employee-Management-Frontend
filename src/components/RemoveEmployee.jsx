@@ -10,6 +10,8 @@ const RemoveEmployee = ({BASE_URL}) => {
   const [search, setSearch] = useState("");
   const [employeeList, setEmployeeList] = useState([]);
   const list=[];
+  
+  
 
   const get10Employee = () =>{
     axios({
@@ -23,6 +25,7 @@ const RemoveEmployee = ({BASE_URL}) => {
         variables.map((variable)=>{
           list.push(variable)
         })
+
         setEmployeeList([...employeeList, ...response.data.data]);
 
         // }
@@ -37,11 +40,6 @@ const RemoveEmployee = ({BASE_URL}) => {
     
   }
   
-  const handleClick = () =>{
-    
-  }
-
-
   const getEmployeByName = (e) =>{
     // e.preventDefault()
     console.log(BASE_URL + "/" + search)
@@ -82,13 +80,15 @@ const RemoveEmployee = ({BASE_URL}) => {
           <button className='search-button'>
             <TfiSearch className='tfi-search' onClick={getEmployeByName}/>
           </button>
-
         </div>
       </div>
+
+      
       <div className='add-container'>
         {
           employeeList?.length > 0 ? (
             employeeList.map((employee) => (
+              
               <ReSubComponent key={employee.id} item={employee} BASE_URL={BASE_URL} />
             )) 
           ) : (

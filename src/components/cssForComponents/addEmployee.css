@@ -65,6 +65,7 @@
 }
 
 .link-container{
+    text-align: center;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     margin: 10px;
@@ -78,15 +79,16 @@
     transition: .3s;
 
 
-    /* position: relative;
-    left: 23%;
-    top: 90px;
-    width: 74%;
-    background-color: var(--background-color);
     
-    margin-bottom: 20px;
-    /* box-shadow: 4px 4px 5px var(--primary-color-light); */ 
-    
+}
+.link-container:hover{
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border-color: var(--background-color);
+
+}
+.link-container:active{
+    background-color: var(--primary-color-light);
 }
 
 .none{
