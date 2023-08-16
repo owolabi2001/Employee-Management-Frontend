@@ -8,7 +8,7 @@ const AddEmployee = ({BASE_URL}) => {
       <div className='add-container'>
         <div className='link-div'>
           <Link className="link-container" to='form'>Add Employee</Link>
-          <Link className="link-container" to='excel'>Add Employee By Excel</Link>
+          <Link className="link-container" to='excel'>Add Employee Using CSV</Link>
         </div>
       </div>
       <Outlet />

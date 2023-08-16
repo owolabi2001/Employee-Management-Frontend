@@ -58,7 +58,7 @@ const AddEmployeeSub1 = ({BASE_URL}) => {
     <div className="add-container">
       <form className='add-employee-form' onSubmit={handleSubmit}>
         <div className='form-inputs'>
-          <input className="staffName" type="text" value={staffName} 
+          <input className="staffName" type="text" required value={staffName} 
           onChange={(e)=>{setStaffName(e.target.value)}} placeholder='Staff Name'/>
 
           <input className="email" type="text" value={email} 
