@@ -1,0 +1,100 @@
+.add-container .top{
+    padding-top: 15px;
+    text-align: center;
+    font-size: 34px;
+    color: var(--primary-color-light);
+    font-family: Arial;
+}
+
+.add-container .short-info{
+    margin-left: 70px;
+    font-family: Arial;
+    text-rendering: auto;
+}
+
+.add-container table, tr, td, th{
+    border: 1px solid;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding: 10px;
+    
+}
+
+.add-container th{
+    background-color: var(--primary-color-light);
+}
+.add-container table{
+
+    width: 80%;
+    margin-left: 70px;
+    border-color: var(--primary-color);
+    
+}
+
+.add-container input[type=file]::file-selector-button{
+    background-color: var(--background-color-dark);
+    margin-left: 10px ;
+    margin-right: 20px;
+    border: none;
+    background: var(--background-color-dark);
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+    padding: 10px;
+}
+
+.add-container .file-btn{
+    padding: 20px;
+}
+
+.btn-icons{
+    height: 200px;
+}
+
+.add-container .file-div{
+    display: flex;
+}
+
+.drop-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px dashed var(--background-color-dark);
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: .2s;
+}
+
+.drop-container:hover {
+    background: #eee;
+    border-color: #111;
+}
+
+.drop-title{
+    color: var(--primary-color-light);
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    transition: color .2s ease-in-out;
+    
+}
+
+.drop-container:hover .drop-title {
+    color: var(--primary-color);
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.drop-container:hover  input[type=file]::file-selector-button{
+    color: var(--background-color-dark);
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    background: var(--primary-color);
+}
+
+
+
