@@ -7,7 +7,7 @@ const Sidebar = () => {
       <a href='/addEmployee'>Add Employee</a>  
       <a href='/removeEmployee'>Remove Employee</a>  
       <a>Update Employee by Name</a>  
-      <a>Get Employee</a>  
+      <a href='/getEmployee'>Get Employee</a>  
     </div>
   )
 }

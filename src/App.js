@@ -5,6 +5,7 @@ import AddEmployee from './components/AddEmployee';
 import RemoveEmployee from './components/RemoveEmployee';
 import AddEmployeeSub1 from './components/AddEmployeeSub1';
 import AddEmployeeSub2 from './components/AddEmployeeSub2';
+import GetEmployee from './components/GetEmployee';
 
 const App = () => {
   const  BASE_URL= "http://localhost:8080/employee"
@@ -19,6 +20,7 @@ const App = () => {
           {/* <Route path='excel' element={<AddEmployeeSub1 BASE_URL={BASE_URL} />}/> */}
         </Route>
         <Route path='/removeEmployee' element={<RemoveEmployee BASE_URL={BASE_URL}/>}></Route>
+        <Route path='/getEmployee' element={<GetEmployee/>}></Route>
       </Routes>
     </div>
   );

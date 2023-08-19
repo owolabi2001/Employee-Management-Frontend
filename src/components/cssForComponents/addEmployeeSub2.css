@@ -46,15 +46,23 @@
 }
 
 .add-container .file-btn{
-    padding: 20px;
+    border-radius: 10px;
+    border-style: none ;
+    height: 60px;
+    width: 60px;
+    margin-top: auto;
+    margin-bottom: auto;
+
 }
 
-.btn-icons{
-    height: 200px;
-}
+
 
 .add-container .file-div{
+    justify-content: center;
     display: flex;
+    gap: 10px;
+    padding-bottom: 20px;
+    padding-top: 16px;
 }
 
 .drop-container{
@@ -95,6 +103,8 @@
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     background: var(--primary-color);
 }
+
+
 
 
 

@@ -21,6 +21,7 @@ const AddEmployeeSub2 = ({BASE_URL}) => {
     }).then(
       (response)=>{
         console.log(response.data)
+        alert("File has been uploaded")
       }).catch(
         (error)=>{
           console.log(error)
@@ -55,9 +56,11 @@ const AddEmployeeSub2 = ({BASE_URL}) => {
       <div className='file-div'>
         <label className='drop-container'>
           <span class="drop-title">Drop CSV file here</span>
-          <input className="file" type='file' required onChange={handlefileChange}/>
+          <input className="file" type='file' onChange={handlefileChange}/>
         </label>
-        <button className="file-btn" onClick={handleUpload}><BiUpload className="btn-icon"/></button>
+        <button className="file-btn" onClick={handleUpload}>
+          <BiUpload className="icon-btn" size={30} style={{color: '#4f033d'}}/>
+        </button>
       </div>
     
     </div>
