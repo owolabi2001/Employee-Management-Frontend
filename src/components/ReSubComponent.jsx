@@ -1,9 +1,10 @@
 import React from 'react'
 import "./cssForComponents/reSubComponent.css"
 import axios from 'axios'
-import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const ReSubComponent = ({item, BASE_URL}) => {
+  const redirect = useNavigate();
 
   const deleteEmployee = ()=>{
     axios.delete(BASE_URL + "/deleteEmployee",{
@@ -30,6 +31,7 @@ const ReSubComponent = ({item, BASE_URL}) => {
         <button onClick={(e)=>{
           deleteEmployee()
           console.log("item Id: ",item.id)
+          redirect("/getEmployee")
           
         }}>delete</button>
       </div>
