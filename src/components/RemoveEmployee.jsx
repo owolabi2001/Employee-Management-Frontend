@@ -6,10 +6,12 @@ import { useState,useEffect } from 'react'
 import {TfiSearch} from 'react-icons/tfi'
 import axios from 'axios'
 
+
 const RemoveEmployee = ({BASE_URL}) => {
   const [search, setSearch] = useState("");
   const [employeeList, setEmployeeList] = useState([]);
   const list=[];
+  
   
   
 
