@@ -1,9 +1,8 @@
 import React from 'react'
 
-const GetEmployeeSub = () => {
+const GetEmployeeSub = ({item}) => {
   return (
-    <div>
-      
+    <div>  
     </div>
   )
 }

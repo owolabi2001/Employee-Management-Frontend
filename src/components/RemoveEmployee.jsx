@@ -2,14 +2,14 @@
 import React from 'react'
 import ReSubComponent from './ReSubComponent'
 import './cssForComponents/removeEmployee.css'
-import { useState,useEffect } from 'react'
+import { useContext,useEffect } from 'react'
 import {TfiSearch} from 'react-icons/tfi'
 import axios from 'axios'
+import { employeeContext } from '../EmployeeContext'
 
 
 const RemoveEmployee = ({BASE_URL}) => {
-  const [search, setSearch] = useState("");
-  const [employeeList, setEmployeeList] = useState([]);
+  const {search, setSearch, employeeList, setEmployeeList} = useContext(employeeContext);
   const list=[];
   
   
