@@ -1,12 +1,14 @@
 import React from 'react'
 import { useState } from 'react'
 import {TfiSearch} from 'react-icons/tfi'
+import GetEmployeeSub from './GetEmployeeSub'
+import axios from 'axios'
 
-const GetEmployee = () => {
+const GetEmployee = ({BASE_URL}) => {
     const [search,setSearch] = useState("");
+    
 
     const getEmployeByName= ()=>{
-
     }
   return (
     <div>
@@ -23,6 +25,9 @@ const GetEmployee = () => {
           </button>
         </div>
       </div>
+
+      <GetEmployeeSub />
+      
     </div>
   )
 }
