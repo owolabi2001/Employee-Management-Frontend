@@ -10,52 +10,7 @@ import { useEmployeeContext } from '../EmployeeContext'
 const RemoveEmployee = () => {
   const {search, setSearch, employeeList,get10Employee,getEmployeByName} = useEmployeeContext();
 
-
   
-
-  // const get10Employee = () =>{
-  //   axios({
-  //     method: "get",
-  //     url: BASE_URL + "/getEmployee"
-  //   }).then(
-  //     (response) =>{
-        
-  //       let variables = response.data.data;
-        
-
-  //       setEmployeeList([...employeeList, ...response.data.data]);
-
-  //       // }
-  //       console.log("employee list from the get10 function",employeeList)
-  //     }
-  //   ).catch(
-  //     (error) =>{
-  //       console.log(error)
-        
-  //     }
-  //   )
-    
-  // }
-  
-  // const getEmployeByName = (e) =>{
-  //   // e.preventDefault()
-  //   console.log(BASE_URL + "/" + search)
-  //   axios(
-  //     {
-  //       method: "get",
-  //       url: BASE_URL  + "/getEployee/" + search
-  //     }
-  //   ).then(
-  //     (response) =>{
-  //       console.log(response.data)
-  //       setEmployeeList(response.data.data);
-  //     }
-  //   ).catch(
-  //     (error) =>{
-  //       console.log("An error just Occured")
-  //     }
-  //   )
-  // }
   useEffect(()=>{
     get10Employee(); 
   },[])
