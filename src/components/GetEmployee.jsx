@@ -1,14 +1,31 @@
 import React from 'react'
-import { useState } from 'react'
+import { useContext } from 'react'
+import { employeeContext } from '../EmployeeContext'
 import {TfiSearch} from 'react-icons/tfi'
 import GetEmployeeSub from './GetEmployeeSub'
 import axios from 'axios'
 
 const GetEmployee = ({BASE_URL}) => {
-    const [search,setSearch] = useState("");
+    const {search, setSearch, employeeList, setEmployeeList} = useContext(employeeContext);
     
 
     const getEmployeByName= ()=>{
+      console.log(BASE_URL + "/" + search)
+      axios(
+        {
+          method: "get",
+          url: BASE_URL  + "/getEployee/" + search
+        }
+      ).then(
+        (response) =>{
+          console.log(response.data)
+          setEmployeeList(response.data.data);
+        }
+      ).catch(
+        (error) =>{
+          console.log("An error just Occured")
+        }
+      )
     }
   return (
     <div>

@@ -2,69 +2,17 @@
 import React from 'react'
 import ReSubComponent from './ReSubComponent'
 import './cssForComponents/removeEmployee.css'
-import { useContext,useEffect } from 'react'
+import { useEffect } from 'react'
 import {TfiSearch} from 'react-icons/tfi'
-import axios from 'axios'
-import { employeeContext } from '../EmployeeContext'
+import { useEmployeeContext } from '../EmployeeContext'
 
 
-const RemoveEmployee = ({BASE_URL}) => {
-  const {search, setSearch, employeeList, setEmployeeList} = useContext(employeeContext);
-  const list=[];
+const RemoveEmployee = () => {
+  const {search, setSearch, employeeList,get10Employee,getEmployeByName} = useEmployeeContext();
+
   
-  
-  
-
-  const get10Employee = () =>{
-    axios({
-      method: "get",
-      url: BASE_URL + "/getEmployee"
-    }).then(
-      (response) =>{
-        
-        let variables = response.data.data;
-        
-        variables.map((variable)=>{
-          list.push(variable)
-        })
-
-        setEmployeeList([...employeeList, ...response.data.data]);
-
-        // }
-        console.log("employee list from the get10 function",employeeList)
-      }
-    ).catch(
-      (error) =>{
-        console.log(error)
-        
-      }
-    )
-    
-  }
-  
-  const getEmployeByName = (e) =>{
-    // e.preventDefault()
-    console.log(BASE_URL + "/" + search)
-    axios(
-      {
-        method: "get",
-        url: BASE_URL  + "/getEployee/" + search
-      }
-    ).then(
-      (response) =>{
-        console.log(response.data)
-        setEmployeeList(response.data.data);
-      }
-    ).catch(
-      (error) =>{
-        console.log("An error just Occured")
-      }
-    )
-  }
   useEffect(()=>{
-    get10Employee();
-    console.log("list",list);
-    console.log("Employee List",employeeList) 
+    get10Employee(); 
   },[])
 
 
@@ -80,7 +28,7 @@ const RemoveEmployee = ({BASE_URL}) => {
             }}
           />
           <button className='search-button'>
-            <TfiSearch className='tfi-search' onClick={getEmployeByName}/>
+            <TfiSearch className='tfi-search' onClick={getEmployeByName()}/>
           </button>
         </div>
       </div>
@@ -91,7 +39,7 @@ const RemoveEmployee = ({BASE_URL}) => {
           employeeList?.length > 0 ? (
             employeeList.map((employee) => (
               
-              <ReSubComponent key={employee.id} item={employee} BASE_URL={BASE_URL} />
+              <ReSubComponent key={employee.id} item={employee}/>
             )) 
           ) : (
             <p>No Employee In the Database</p>

@@ -3,7 +3,9 @@ import { useState } from 'react'
 import axios from 'axios'
 import {BiUpload} from "react-icons/bi"
 import "./cssForComponents/addEmployeeSub2.css"
-const AddEmployeeSub2 = ({BASE_URL}) => {
+import { useEmployeeContext } from '../EmployeeContext'
+const AddEmployeeSub2 = () => {
+  const {BASE_URL} = useEmployeeContext();
 
   const [file, setFile] = useState(null);
 

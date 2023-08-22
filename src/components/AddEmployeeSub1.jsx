@@ -1,11 +1,13 @@
 import React from 'react'
 import { useState } from 'react';
 import axios from 'axios';
+import { useEmployeeContext } from '../EmployeeContext';
 
 
 let res = {}
-const AddEmployeeSub1 = ({BASE_URL}) => {
-    const [staffName, setStaffName] = useState("");
+const AddEmployeeSub1 = () => {
+  const {BASE_URL} = useEmployeeContext();
+  const [staffName, setStaffName] = useState("");
   const [email, setEmail] = useState("");
   const [staffId, setStaffId] = useState("");
   const [role, setRole] = useState("");
