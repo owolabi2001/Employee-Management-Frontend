@@ -2,9 +2,11 @@ import React from 'react'
 import "./cssForComponents/reSubComponent.css"
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { useEmployeeContext } from '../EmployeeContext'
 
-const ReSubComponent = ({item, BASE_URL}) => {
+const ReSubComponent = ({item}) => {
   const redirect = useNavigate();
+  const BASE_URL = useEmployeeContext();
 
   const deleteEmployee = ()=>{
     axios.delete(BASE_URL + "/deleteEmployee",{

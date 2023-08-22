@@ -2,7 +2,7 @@ import React from 'react'
 import './cssForComponents/addEmployee.css'
 import { Link,Outlet } from 'react-router-dom'
 
-const AddEmployee = ({BASE_URL}) => {
+const AddEmployee = () => {
   return (
     <div >
       <div className='add-container'>
