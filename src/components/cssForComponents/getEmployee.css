@@ -1,0 +1,41 @@
+.get-div{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 10px;
+    column-gap: 10px;
+    background-attachment: fixed;
+    /* background-color: var(--primary-color-light); */
+}
+
+.get-container{
+    backdrop-filter: blur(10px);
+    box-shadow:  inset 0 0 30px rgba(150, 150, 150, 0.192);
+    /* box-shadow: inset 0 0 20px var(--background-color-dark); */
+    position: relative;
+    padding: 10px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    /* filter: blur(2px); */
+    background: inherit;
+    /* backdrop-filter: blur(5px); */
+    /* background-color: var(--primary-color-light); */
+}
+
+/* .get-blur{
+    position: relative;
+    backdrop-filter: blur(1px);
+    box-shadow: inset 0 0 20px var(--primary-color);
+} */
+
+.get-container .get-btn{
+    /* position: absolute; */
+    padding: 40px;
+    margin: 20px;
+    background-color: var(--background-color);
+    border-style: solid;
+    border-color: var(--primary-color);
+    border-radius: 20px ;
+}

@@ -6,7 +6,7 @@ import { useEmployeeContext } from '../EmployeeContext'
 
 const ReSubComponent = ({item}) => {
   const redirect = useNavigate();
-  const BASE_URL = useEmployeeContext();
+  const {BASE_URL} = useEmployeeContext();
 
   const deleteEmployee = ()=>{
     axios.delete(BASE_URL + "/deleteEmployee",{
@@ -23,8 +23,6 @@ const ReSubComponent = ({item}) => {
   }
 
   
-    
-
 
   return (
     <div className='parent'>

@@ -24,8 +24,8 @@ const App = () => {
           </Route>
 
           <Route path='/removeEmployee' element={<RemoveEmployee   />}/>
-          
-          <Route path='getEmployee' element = {<GetEmployee/>}/>
+
+          <Route path='/getEmployee' element = {<GetEmployee/>}/>
 
           <Route path='/updateEmployee' element= {<UpdateEmploeeByName BASE_URL={BASE_URL} />}></Route>
           
